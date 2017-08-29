@@ -15,14 +15,14 @@ int main()
 	// Get a guess from the user
 	cout << "Enter your guess: ";
 	string Guess = "";
-	cin >> Guess;
+	getline(cin, Guess);
 
 	// Repeat the guess back to the user
 	cout << "Your guess was: " << Guess << endl;
 
 	// Get a guess from the user
 	cout << "Enter your guess: ";
-	cin >> Guess;
+	getline(cin, Guess);
 
 	// Repeat the guess back to the user
 	cout << "Your guess was: " << Guess << endl;
