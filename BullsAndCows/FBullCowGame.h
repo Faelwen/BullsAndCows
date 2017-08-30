@@ -4,10 +4,10 @@
 class FBullCowGame {
 public:
 	void Reset(int WordLength);
-	int GetMaxTries();
-	int GetCurrentTry();
+	int GetMaxTries() const;
+	int GetCurrentTry() const;
 	bool CheckGuess(std::string Guess);
-	bool GameOver();
+	bool GameOver() const;
 
 private:
 	int CurrentTry = 1;

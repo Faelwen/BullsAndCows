@@ -4,12 +4,12 @@ void FBullCowGame::Reset(int WordLength)
 {
 }
 
-int FBullCowGame::GetMaxTries()
+int FBullCowGame::GetMaxTries() const
 {
 	return MaxTries;
 }
 
-int FBullCowGame::GetCurrentTry()
+int FBullCowGame::GetCurrentTry() const
 {
 	return CurrentTry;
 }
@@ -19,7 +19,7 @@ bool FBullCowGame::CheckGuess(std::string Guess)
 	return false;
 }
 
-bool FBullCowGame::GameOver()
+bool FBullCowGame::GameOver() const
 {
 	return false;
 }
