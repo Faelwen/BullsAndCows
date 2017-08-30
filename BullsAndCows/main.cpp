@@ -4,14 +4,17 @@
 using namespace std;
 
 void PrintIntroduction();
+int main();
 void PlayGame();
 string GetGuess();
+bool AskToPlayAgain();
 
 
 int main()
 {
 	PrintIntroduction();
 	PlayGame();
+	AskToPlayAgain();
 	return 0;
 }
 
@@ -38,3 +41,12 @@ string GetGuess() {
 	getline(cin, Guess);
 	return Guess;
 }
+
+bool AskToPlayAgain()
+{
+	cout << "Do you want to play again?" << endl;
+	string Response = "";
+	getline(cin, Response);
+	return (Response[0] == 'Y' || Response[0] == 'y');
+}
+
