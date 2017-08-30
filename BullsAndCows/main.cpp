@@ -10,7 +10,14 @@ string GetGuess();
 int main()
 {
 	PrintIntroduction();
-	GetGuess();
+
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int count = 1; count <= NUMBER_OF_TURNS; count++)
+	{
+		GetGuess();
+		cout << endl;
+	}
+
 	return 0;
 }
 
