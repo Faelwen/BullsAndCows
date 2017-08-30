@@ -44,6 +44,7 @@ std::string GetGuess() {
 }
 
 bool PlayAgain() {
+	BCGame.Reset();
 	std::cout << "Do you want to play again?" << std::endl;
 	std::string Response = "";
 	std::getline(std::cin, Response);
