@@ -10,6 +10,6 @@ public:
 	bool GameOver();
 
 private:
-	int CurrentTry;
-	int MaxTries;
+	int CurrentTry = 1;
+	int MaxTries = 5;
 };
