@@ -7,14 +7,16 @@ void PrintIntroduction();
 int main();
 void PlayGame();
 string GetGuess();
-bool AskToPlayAgain();
+bool PlayAgain();
 
 
 int main()
 {
-	PrintIntroduction();
-	PlayGame();
-	AskToPlayAgain();
+	do {
+		PrintIntroduction();
+		PlayGame();
+	} while (PlayAgain());
+
 	return 0;
 }
 
@@ -42,7 +44,7 @@ string GetGuess() {
 	return Guess;
 }
 
-bool AskToPlayAgain()
+bool PlayAgain()
 {
 	cout << "Do you want to play again?" << endl;
 	string Response = "";
