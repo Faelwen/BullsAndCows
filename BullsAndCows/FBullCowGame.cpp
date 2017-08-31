@@ -12,11 +12,16 @@ int32 FBullCowGame::GetCurrentTry() const {
 	return CurrentTry;
 }
 
+int32 FBullCowGame::GetHiddenWordLength() const
+{
+	return HiddenWord.length();
+}
+
 bool FBullCowGame::GameOver() const {
 	return false;
 }
 
-bool FBullCowGame::CheckGuess(FString Guess) {
+bool FBullCowGame::CheckGuess(FString Guess) const {
 	return false;
 }
 
@@ -36,9 +41,9 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	CurrentTry++;
 	FBullCowCount BullCowCount;
 
-	for (int32 i = 0; i < HiddenWord.length(); i++) {
-		for (int32 j = 0; j < HiddenWord.length(); j++) {
-			if (Guess[i] == HiddenWord[i]) {
+	for (int32 i = 0; i < GetHiddenWordLength(); i++) {
+		for (int32 j = 0; j < Guess.length(); j++) {
+			if (Guess[j] == HiddenWord[i]) {
 				if (i == j) {
 					BullCowCount.Bulls++;
 				}
