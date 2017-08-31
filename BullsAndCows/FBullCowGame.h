@@ -1,19 +1,22 @@
 #pragma once
 #include <string>
 
+using FString = std::string;
+using int32 = int;
+
 class FBullCowGame {
 public:
 	FBullCowGame();
 	
-	int GetMaxTries() const;
-	int GetCurrentTry() const;
+	int32 GetMaxTries() const;
+	int32 GetCurrentTry() const;
 	bool GameOver() const;
 
-	bool CheckGuess(std::string Guess);
+	bool CheckGuess(FString Guess);
 	void Reset();
 	
 
 private:
-	int CurrentTry;
-	int MaxTries;
+	int32 CurrentTry;
+	int32 MaxTries;
 };
