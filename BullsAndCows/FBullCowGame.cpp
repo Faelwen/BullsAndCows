@@ -22,7 +22,18 @@ bool FBullCowGame::GameOver() const {
 }
 
 EWordsStatus FBullCowGame::CheckGuess(FString Guess) const {
-	return EWordsStatus::OK;
+	if (false) {
+		return EWordsStatus::Not_Isogram;
+	}
+	else if (false) {
+		return EWordsStatus::Not_Lowercase;
+	}
+	else if (GetHiddenWordLength() != Guess.length()) {
+		return EWordsStatus::Wrong_Length;
+	}
+	else {
+		return EWordsStatus::OK;
+	}
 }
 
 void FBullCowGame::Reset() {
