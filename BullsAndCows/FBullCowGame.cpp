@@ -21,8 +21,8 @@ bool FBullCowGame::GameOver() const {
 	return false;
 }
 
-bool FBullCowGame::CheckGuess(FString Guess) const {
-	return false;
+EWordsStatus FBullCowGame::CheckGuess(FString Guess) const {
+	return EWordsStatus::OK;
 }
 
 void FBullCowGame::Reset() {
