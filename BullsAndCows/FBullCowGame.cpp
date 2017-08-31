@@ -31,9 +31,24 @@ void FBullCowGame::Reset() {
 	return;
 }
 
-BullCowCount FBullCowGame::SubmitGuess(FString)
+FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 {
 	CurrentTry++;
-	BullCowCount BullCowCount;
+	FBullCowCount BullCowCount;
+
+	for (int32 i = 0; i < HiddenWord.length(); i++) {
+		for (int32 j = 0; j < HiddenWord.length(); j++) {
+			if (Guess[i] == HiddenWord[i]) {
+				if (i == j) {
+					BullCowCount.Bulls++;
+				}
+				else
+				{
+					BullCowCount.Cows++;
+				}
+			}
+		}
+	}
+
 	return BullCowCount;
 }
