@@ -22,7 +22,18 @@ bool FBullCowGame::CheckGuess(FString Guess) {
 
 void FBullCowGame::Reset() {
 	constexpr int32 MAX_TRIES = 8;
-	CurrentTry = 1;
 	MaxTries = MAX_TRIES;
+	
+	const FString HIDDEN_WORD = "planet";
+	HiddenWord = HIDDEN_WORD;
+
+	CurrentTry = 1;
 	return;
+}
+
+BullCowCount FBullCowGame::SubmitGuess(FString)
+{
+	CurrentTry++;
+	BullCowCount BullCowCount;
+	return BullCowCount;
 }
