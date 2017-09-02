@@ -40,6 +40,13 @@ void PlayGame() {
 
 void PrintIntroduction() {
 	std::cout << "Welcome to Bulls and Cows, a fun word game.\n";
+	std::cout << std::endl;
+	std::cout << "          }   {         ___ " << std::endl;
+	std::cout << "          (o o)        (o o) " << std::endl;
+	std::cout << "   /-------\\ /          \\ /-------\\ " << std::endl;
+	std::cout << "  / | BULL |O            O| COW  | \\ " << std::endl;
+	std::cout << " *  |-,--- |              |------|  * " << std::endl;
+	std::cout << "    ^      ^              ^      ^ " << std::endl;
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength();
 	std::cout << " letter isogram I'm thinking of?\n";
 }
@@ -49,7 +56,7 @@ FString GetValidGuess() {
 	FString Guess = "";
 
 	do {
-		std::cout << "Try " << BCGame.GetCurrentTry() << " - Enter your guess: ";
+		std::cout << "Try " << BCGame.GetCurrentTry() << " of " << BCGame.GetMaxTries() << " - Enter your guess: ";
 		std::getline(std::cin, Guess);
 
 		Status = BCGame.CheckGuess(Guess);
