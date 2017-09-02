@@ -27,7 +27,6 @@ public:
 
 	bool GameOver() const;
 	EWordsStatus CheckGuess(FString) const;
-
 	void Reset();
 	FBullCowCount SubmitGuess(FString);
 
@@ -36,4 +35,6 @@ private:
 	int32 MaxTries;
 	FString HiddenWord;
 	bool bGameWon;
+
+	bool IsIsogram(FString) const;
 };
