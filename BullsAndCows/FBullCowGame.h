@@ -32,7 +32,6 @@ public:
 
 private:
 	int32 CurrentTry;
-	int32 MaxTries;
 	FString HiddenWord;
 	bool bGameWon;
 	bool IsLowerCase(FString) const;
