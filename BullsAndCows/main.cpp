@@ -44,9 +44,10 @@ void PrintIntroduction() {
 
 FString GetValidGuess() {
 	EWordsStatus Status = EWordsStatus::Invalid_Status;
+	FString Guess = "";
+
 	do {
 		std::cout << "Try " << BCGame.GetCurrentTry() << " - Enter your guess: ";
-		FString Guess = "";
 		std::getline(std::cin, Guess);
 
 		Status = BCGame.CheckGuess(Guess);
@@ -62,11 +63,12 @@ FString GetValidGuess() {
 			std::cout << "Please enter all lowercase letters.\n";
 			break;
 		default:
-			return Guess;
 			break;
 		}
 		std::cout << "\n";
 	} while (Status != EWordsStatus::OK);
+
+	return Guess;
 }
 
 bool PlayAgain() {
