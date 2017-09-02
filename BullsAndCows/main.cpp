@@ -10,6 +10,7 @@ int32 main();
 void PlayGame();
 FString GetValidGuess();
 bool PlayAgain();
+void PrintGameSummary();
 
 FBullCowGame BCGame;
 
@@ -33,6 +34,8 @@ void PlayGame() {
 		std::cout << "Bulls = " << BullCowCount.Bulls;
 		std::cout << ". Cows = " << BullCowCount.Cows << "\n\n";
 	}
+	PrintGameSummary();
+	return;
 }
 
 void PrintIntroduction() {
@@ -76,5 +79,16 @@ bool PlayAgain() {
 	FString Response = "";
 	std::getline(std::cin, Response);
 	return (Response[0] == 'Y' || Response[0] == 'y');
+}
+
+void PrintGameSummary()
+{
+	if (BCGame.GameOver()) {
+		std::cout << "WELL DONE - YOU WIN!\n";
+	}
+	else {
+		std::cout << "Better lck next time!\n";
+	}
+	return;
 }
 
