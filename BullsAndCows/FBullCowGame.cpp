@@ -48,6 +48,17 @@ void FBullCowGame::Reset() {
 
 bool FBullCowGame::IsIsogram(FString Word) const
 {
+	if (Word.length() <= 1) { return true; }
+	TMap<char, bool> LetterSeen;
+	for (auto Letter : Word) {
+		Letter = tolower(Letter);
+		if (LetterSeen[Letter]) {
+			return false;
+		}
+		else {
+			LetterSeen[Letter] = true;
+		}
+	}
 	return true;
 }
 
